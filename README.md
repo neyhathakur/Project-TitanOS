@@ -46,16 +46,44 @@ All test locators are structured using Page Object Model under `pages/www/`.
 Node.js installed (version >= 14 recommended)
 VS Code with Playwright Runner and Playwright Test Explorer extensions installed.
 
-### Environment Variables
-Create a `.env` file in the root directory and add:
-
-API_URL=https://app.titanos.tv/
-
-
-### Run All Tests
+### Running and Debugging Tests
 ```bash
 npx playwright test
 ```
+By default, Playwright tests run in headless mode for faster execution.
+
+Run Tests Normally (Headless)
+
+Run Tests With Browser UI (Headed Mode)
+
+If you want to see the browser actions during test execution, you have two options:
+
+Using the command line flag:
+
+```bash
+npx playwright test --headed
+```
+OR Modify the Playwright config file by setting:
+
+use: {
+  headless: false,
+  // ... other settings
+}
+
+This will always run tests in headed mode when executing npx playwright test.
+
+Useful for debugging or visual verification of tests.
+
+Slow Down Actions for Better Visibility
+
+You can add --slow-mo to slow down each action:
+
+npx playwright test --headed --slow-mo 100
+
+
+--slow-mo 100 adds a 100ms delay between actions.
+
+Adjust the number for slower or faster playback.
 
 ### Generate and View HTML Report
 ```bash
