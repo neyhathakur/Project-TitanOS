@@ -46,6 +46,12 @@ All test locators are structured using Page Object Model under `pages/www/`.
 Node.js installed (version >= 14 recommended)
 VS Code with Playwright Runner and Playwright Test Explorer extensions installed.
 
+### Environment Variables
+Create a `.env` file in the root directory and add:
+
+API_URL=https://app.titanos.tv/
+
+
 ### Run All Tests
 ```bash
 npx playwright test
